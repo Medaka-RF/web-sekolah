@@ -5,9 +5,9 @@
     <div class="card shadow-lg" style="border-radius: 20px; width: 800px;">
         <div class="row no-gutters">
             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center p-4">
-                <img src="{{ asset('image/logosmp.jpg') }}" alt="Logo Sekolah" style="width: 80px;">
+                <img src="{{ asset('assets/image/logosmp.jpg') }}" alt="Logo Sekolah" style="width: 100px; height: auto;">
                 <h3 class="mt-3 mb-2">SMP 1 Sukaratu</h3>
-                <img src="{{ asset('image/orangsmp') }}" alt="Lock" style="width: 120px;">
+                <img src="{{ asset('assets/image/orangsmp.png') }}" alt="Siswa" style="width: 100px; height: auto;">
             </div>
             <div class="col-md-6 bg-success text-white p-5" style="border-radius: 0 20px 20px 0;">
                 <h2 class="mb-4 text-center">Login</h2>

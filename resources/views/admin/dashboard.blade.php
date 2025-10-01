@@ -15,19 +15,19 @@
                     <i class="fas fa-tachometer-alt"></i> 
                     Dashboard</a></li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">
+                <a class="nav-link text-white" href="{{ route('admin.siswa') }}">
                     <i class="fas fa-users"></i> 
                     Siswa</a></li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">
+                <a class="nav-link text-white" href="{{ route('admin.guru') }}">
                     <i class="fas fa-chalkboard-teacher"></i> 
                     Guru</a></li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">
+                <a class="nav-link text-white" href="{{ route('admin.berita') }}">
                     <i class="fas fa-newspaper"></i> 
                     Berita</a></li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">
+                <a class="nav-link text-white" href="{{ route('admin.galeri') }}">
                     <i class="fas fa-images"></i> 
                     Galeri</a></li>
             <li class="nav-item">
