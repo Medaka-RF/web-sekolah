@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class LoginController extends Controller
 {
     //
@@ -28,6 +29,26 @@ class LoginController extends Controller
 
         return back()->with('loginError', 'Login Gagal');
     }
+
+
+public function store(Request $request)
+{
+    $request->validate([
+        'judul' => 'required',
+        'isi' => 'required',
+        'tanggal' => 'required|date',
+    ]);
+
+    Berita::create([
+        'judul' => $request->judul,
+        'isi' => $request->isi,
+        'tanggal' => $request->tanggal,
+        'id_user' => Auth::id(), // otomatis ambil dari user login
+    ]);
+
+    return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan!');
+}
+
 
     public function logout(Request $request)
     {

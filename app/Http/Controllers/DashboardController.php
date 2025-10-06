@@ -62,7 +62,7 @@ class DashboardController extends Controller
 
     public function kelas()
     {
-        return view('admin.profilsekolah',[
+        return view('admin.profil',[
             'title' => 'Data Profil Sekolah',
             'active' => 'profilsekolah'
         ]);

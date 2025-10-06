@@ -3,43 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>@yield('title') | Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-warning">
-        <div class="container">
-          <a class="navbar-brand" href="{{ url ('/') }}">SMP 1 SUkaratu</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button> -->
-          <!-- <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="">Beranda</a>
-                </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"></a>Profil Sekolah</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Berita</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Galeri</a>
-              </li>
-              <li class="nav-iitem">
-                <a class="nav-link" href="#">Kontak</a>
-              </li>
-            </ul>
-            <form class="d-flex ms-3">
-              <a href="{{ route('login') }}" class="btn btn-warning btn-sm">Login</a>
-            </form>
-          </div> -->
-        <!-- </div>
-      </nav> -->
-      @yield('content')
+<div class="container-fluid">
+    <div class="row g-0">
+        
+        {{-- Sidebar --}}
+        <div class="col-md-2 bg-dark text-white min-vh-100">
+            <div class="text-center py-4 border-bottom border-secondary">
+                <img src="{{ asset('images/admin.png') }}" alt="Admin" class="rounded-circle mb-2" width="60">
+                <div>Admin</div>
+                <small class="text-success">Online</small>
+            </div>
+
+            <div class="p-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-white" href="{{ url('admin/dashboard') }}">
+                            <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-white" href="{{ route('admin.siswa') }}">
+                            <i class="fas fa-users me-2"></i> Siswa
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-white" href="{{ route('admin.guru') }}">
+                            <i class="fas fa-chalkboard-teacher me-2"></i> Guru
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-white" href="{{ route('admin.berita') }}">
+                            <i class="fas fa-newspaper me-2"></i> Berita
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-white" href="{{ route('admin.galeri') }}">
+                            <i class="fas fa-images me-2"></i> Galeri
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-white" href="{{ route('admin.ekstrakurikuler') }}">
+                            <i class="fas fa-futbol me-2"></i> Ekstrakurikuler
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link text-white" href="{{ route('admin.profil') }}">
+                            <i class="fas fa-school me-2"></i> Profil Sekolah
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        {{-- Konten Utama --}}
+        <div class="col-md-10 bg-light min-vh-100">
+            {{-- Navbar --}}
+            <nav class="navbar navbar-light bg-white shadow-sm px-3 mb-4">
+                <span class="navbar-brand mb-0 h5">@yield('title')</span>
+                <div>
+                    <span class="me-3"><i class="fas fa-user-circle"></i> Admin</span>
+                    <a href="#" class="btn btn-outline-danger btn-sm">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </nav>
+
+            {{-- Halaman Konten --}}
+            <div class="container-fluid">
+                @yield('content')
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
