@@ -11,12 +11,13 @@ class Galeri extends Model
     use HasFactory;
 
     protected $table = 'galeri';
-    protected $primaryKey = 'id_galeri';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'judul',
-        'deskripsi',
-        'foto',
-        'tanggal_upload'
+        'keterangan',
+        'file',
+        'jenis',
+        'tanggal'
     ];
     public $timestamps = false;
 }

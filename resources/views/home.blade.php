@@ -125,8 +125,8 @@
             @foreach($galeri as $item)
             <div class="col-md-4 mb-3">
                 <div class="card shadow-sm">
-                    @if($item->kategori == 'Foto')
-                        <img src="{{ asset('storage/'.$item->file) }}" class="card-img-top" alt="foto">
+                    @if($item->kategori == 'File')
+                        <img src="{{ asset('storage/'.$item->file) }}" class="card-img-top" alt="file">
                     @else
                         <video class="w-100" controls>
                             <source src="{{ assets('storage/'.$item->file) }}" type="video/mp4">

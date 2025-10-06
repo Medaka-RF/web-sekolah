@@ -6,7 +6,7 @@
 <div class="container mt-4">
     <h2 class="mb-4">Edit Data Guru</h2>
 
-    <form action="{{ route('guru.update', $guru->id_guru) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('guru.update', $guru->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -38,7 +38,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Perbarui</button>
-        <a href="{{ route('guru.index') }}" class="btn btn-secondary">Batal</a>
+        <a href="{{ route('admin.guru') }}" class="btn btn-secondary">Batal</a>
     </form>
 </div>
 @endsection

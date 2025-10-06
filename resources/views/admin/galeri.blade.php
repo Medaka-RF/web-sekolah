@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="card mt-4">
-    <div class="card-header bg-primary text-white">
+    <div class="card-header bg-success text-white">
         <i class="fas fa-images"></i> Galeri Sekolah (Total: {{ count($galeri ?? []) }})
     </div>
 
@@ -25,8 +25,8 @@
                         <p class="small text-muted">{{ $item->deskripsi }}</p>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="{{ route('galeri.edit', $item->id_galeri) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                        <form action="{{ route('galeri.destroy', $item->id_galeri) }}" method="POST" class="d-inline">
+                        <a href="{{ route('galeri.edit', $item->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                        <form action="{{ route('galeri.destroy', $item->id) }}" method="POST" class="d-inline">
                             @csrf @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus foto ini?')">
                                 <i class="fas fa-trash"></i>

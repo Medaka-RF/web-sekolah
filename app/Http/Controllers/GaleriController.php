@@ -23,56 +23,62 @@ class GaleriController extends Controller
     {
         $request->validate([
             'judul' => 'required|string|max:255',
-            'deskripsi' => 'nullable|string',
-            'foto' => 'required|image|max:2048',
+            'keterangan' => 'required|string',
+            'file' => 'required|file|mimes:jpg,jpeg,png,mp4,mov,avi|max:20480', 
+            'jenis' => 'required|in:foto,video',
+            'tanggal' => 'required|date',
         ]);
 
-        $path = $request->file('foto')->store('galeri', 'public');
+        $path = $request->file('file')->store('galeri', 'public');
 
         Galeri::create([
             'judul' => $request->judul,
-            'deskripsi' => $request->deskripsi,
-            'foto' => $path,
-            'tanggal_upload' => now(),
+            'keterangan' => $request->keterangan,
+            'file' => $path,
+            'jenis' => $request->jenis,
+            'tanggal' => $request->tanggal,
         ]);
 
         return redirect()->route('admin.galeri')->with('success', 'Foto galeri berhasil ditambahkan!');
     }
 
-    public function edit($id_galeri)
+    public function edit($id)
     {
-        $galeri = Galeri::findOrFail($id_galeri);
+        $galeri = Galeri::findOrFail($id);
         return view('galeri.edit', compact('galeri'));
     }
 
-    public function update(Request $request, $id_galeri)
+    public function update(Request $request, $id)
     {
-        $galeri = Galeri::findOrFail($id_galeri);
+        $galeri = Galeri::findOrFail($id);
 
         $request->validate([
             'judul' => 'required|string|max:255',
-            'deskripsi' => 'nullable|string',
-            'foto' => 'nullable|image|max:2048',
+            'keterangan' => 'required|string',
+            'file' => 'required|file|mimes:jpg,jpeg,png,mp4,mov,avi|max:20480', 
+            'jenis' => 'required|in:foto,video',
+            'tanggal' => 'required|date',
         ]);
 
         $path = $galeri->foto;
-        if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('galeri', 'public');
+        if ($request->hasFile('file')) {
+            $path = $request->file('file')->store('galeri', 'public');
         }
 
         $galeri->update([
             'judul' => $request->judul,
-            'deskripsi' => $request->deskripsi,
-            'foto' => $path,
-            'tanggal_upload' => now(),
+            'keterangan' => $request->keterangan,
+            'file' => $path,
+            'jenis' => $request->jenis,
+            'tanggal' => $request->tanggal,
         ]);
 
         return redirect()->route('admin.galeri')->with('success', 'Data galeri berhasil diperbarui!');
     }
 
-    public function destroy($id_galeri)
+    public function destroy($id)
     {
-        $galeri = Galeri::findOrFail($id_galeri);
+        $galeri = Galeri::findOrFail($id);
         $galeri->delete();
 
         return redirect()->route('admin.galeri')->with('success', 'Data galeri berhasil dihapus!');

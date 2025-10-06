@@ -41,15 +41,15 @@ class GuruController extends Controller
         return redirect()->route('admin.guru')->with('success', 'Guru berhasil ditambahkan!');
     }
 
-    public function edit($id_guru)
+    public function edit($id)
     {
-        $guru = Guru::findOrFail($id_guru);
+        $guru = Guru::findOrFail($id);
         return view('guru.edit', compact('guru'));
     }
 
-    public function update(Request $request, $id_guru)
+    public function update(Request $request, $id)
     {
-        $guru = Guru::findOrFail($id_guru);
+        $guru = Guru::findOrFail($id);
 
         $request->validate([
             'nama_guru' => 'required',
@@ -73,9 +73,9 @@ class GuruController extends Controller
         return redirect()->route('admin.guru')->with('success', 'Guru berhasil diperbarui!');
     }
 
-    public function destroy($id_guru)
+    public function destroy($id)
     {
-        $guru = Guru::findOrFail($id_guru);
+        $guru = Guru::findOrFail($id);
         $guru->delete();
         return redirect()->route('admin.guru')->with('success', 'Guru berhasil dihapus!');
     }
