@@ -8,6 +8,7 @@
         <i class="fas fa-futbol"></i> Daftar Ekstrakurikuler (Total: {{ count($ekstrakurikuler ?? []) }})
     </div>
 
+    <div class="table-responsive min-vh-100">
     <div class="card-body">
         <a href="{{ route('ekstrakurikuler.create') }}" class="btn btn-primary mb-3">+ Tambah Ekstrakurikuler</a>
 
@@ -16,7 +17,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama Ekstrakurikuler</th>
-                    <th>Pembimbing</th>
+                    <th>Pembina</th>
                     <th>Jadwal</th>
                     <th>Deskripsi</th>
                     <th>Foto</th>
@@ -28,12 +29,12 @@
                 <tr>
                     <td>{{ $index + 1 }}</td>
                     <td>{{ $item->nama_ekstrakurikuler }}</td>
-                    <td>{{ $item->pembimbing }}</td>
+                    <td>{{ $item->pembina }}</td>
                     <td>{{ $item->jadwal }}</td>
                     <td>{{ $item->deskripsi }}</td>
                     <td>
                         @if ($item->foto)
-                            <img src="{{ asset('storage/' . $item->foto) }}" width="60" height="60" class="rounded">
+                            <img src="{{ asset('assets/image' . $item->foto) }}" width="60" height="60" class="rounded">
                         @else
                             <span class="text-muted">Tidak ada</span>
                         @endif
@@ -49,6 +50,7 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
     </div>
 </div>
 @endsection

@@ -5,7 +5,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="card">
-        <div class="card-header bg-info text-white">
+        <div class="card-header bg-success text-white">
             <i class="fas fa-plus"></i> Tambah Ekstrakurikuler
         </div>
         <div class="card-body">
@@ -31,7 +31,7 @@
                     <label class="form-label">Foto</label>
                     <input type="file" name="foto" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-info text-white">Simpan</button>
+                <button type="submit" class="btn btn-primary text-white">Simpan</button>
                 <a href="{{ route('admin.ekstrakurikuler') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>

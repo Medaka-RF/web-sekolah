@@ -62,7 +62,7 @@
             </div>
 
             <div class="text-end">
-                <a href="{{ route('berita.index') }}" class="btn btn-secondary">Kembali</a>
+                <a href="{{ route('admin.berita') }}" class="btn btn-secondary">Kembali</a>
                 <button type="submit" class="btn btn-warning text-dark">Perbarui Berita</button>
             </div>
         </form>

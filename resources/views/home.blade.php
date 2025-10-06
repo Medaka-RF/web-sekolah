@@ -35,7 +35,7 @@
 
 <section id="beranda" class="hero">
     <div>
-        <img src="{{ asset('images/logo.png') }}" width="100" class="mb-3" alt="Logo Sekolah">
+        <img src="{{ asset('assets/image/') }}" width="100" class="mb-3" alt="Logo Sekolah">
         <h1>{{ $profil->nama_sekolah ?? 'SMPN 1 Sukaratu' }}</h1>
         <p>{{ $profil->alamat ?? 'Kp.Sindanggalih, Kec.Sukaratu, Kab.Tasikmalaya' }}</p>
         <a href="#profil" class="btn btn-light mt-3">Lihat Selengkapnya</a>
@@ -47,13 +47,13 @@
         <h2 class="section-title">Profil Sekolah</h2>
         <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="{{ asset('images/tentang-sekolah.jpg') }}" alt="Tentang Sekolah" class="img-fluid rounded shadow">
+                <img src="{{ asset('assets/image/') }}" alt="Tentang Sekolah" class="img-fluid rounded shadow">
             </div>
             <div class="col-md-6">
                 <h4>{{ $profil->nama_sekolah ?? 'SMPN 1 Sukaratu' }}</h4>
-                <p><strong>Kepala Sekolah:</strong> {{ $profil->kepala_sekolah ?? 'Nama Kepala Sekolah' }}</p>
-                <p><strong>NPSN:</strong> {{ $profil->npsn ?? '-' }}</p>
-                <p><strong>Kontak:</strong> {{ $profil->kontak ?? '-' }}</p>
+                <p><strong>Kepala Sekolah:</strong> {{ $profil->kepala_sekolah ?? 'Yanto' }}</p>
+                <p><strong>NPSN:</strong> {{ $profil->npsn ?? '00000000001' }}</p>
+                <p><strong>Kontak:</strong> {{ $profil->kontak ?? '08123456789' }}</p>
                 <p>{{ $profil->deskripsi ?? 'Sekolah' }}</p>
             </div>
         </div>
@@ -129,7 +129,7 @@
                         <img src="{{ asset('storage/'.$item->file) }}" class="card-img-top" alt="file">
                     @else
                         <video class="w-100" controls>
-                            <source src="{{ assets('storage/'.$item->file) }}" type="video/mp4">
+                            <source src="{{ asset('storage/'.$item->file) }}" type="video/mp4">
                         </video>
                     @endif
                     <div class="card-body">

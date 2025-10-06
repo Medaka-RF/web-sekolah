@@ -8,6 +8,7 @@
         <i class="fas fa-chalkboard-teacher"></i> Daftar Guru (Total: {{ count($guru ?? []) }})
     </div>
 
+    <div></div>
     <div class="card-body">
         <a href="{{ route('guru.create') }}" class="btn btn-primary mb-3">+ Tambah Guru</a>
 

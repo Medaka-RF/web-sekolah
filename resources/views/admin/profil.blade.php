@@ -22,12 +22,12 @@
             <p><strong>Deskripsi:</strong> {{ $profil->deskripsi }}</p>
             @if ($profil->foto)
                 <p><strong>Foto:</strong><br>
-                    <img src="{{ asset('storage/'.$profil->foto) }}" width="150">
+                    <img src="{{ asset('assets/image'.$profil->foto) }}" width="150">
                 </p>
             @endif
             @if ($profil->logo)
                 <p><strong>Logo:</strong><br>
-                    <img src="{{ asset('storage/'.$profil->logo) }}" width="100">
+                    <img src="{{ asset('assets/image'.$profil->logo) }}" width="100">
                 </p>
             @endif
             <a href="{{ route('profil.edit', $profil->id) }}" class="btn btn-primary">Edit Profil</a>

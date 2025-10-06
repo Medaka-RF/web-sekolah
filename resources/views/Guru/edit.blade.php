@@ -32,7 +32,7 @@
             <label for="foto" class="form-label">Foto</label>
             <input type="file" name="foto" id="foto" class="form-control">
             @if($guru->foto)
-                <img src="{{ asset('storage/foto_guru/' . $guru->foto) }}" 
+                <img src="{{ asset('storage/' . $guru->foto) }}" 
                      alt="Foto Guru" width="100" class="mt-2">
             @endif
         </div>

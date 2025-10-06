@@ -23,7 +23,7 @@ class EkstrakurikulerController extends Controller
     {
         $request->validate([
             'nama_ekstrakurikuler' => 'required|string|max:100',
-            'pembimbing' => 'required|string|max:100',
+            'pembina' => 'required|string|max:100',
             'jadwal' => 'required|string|max:100',
             'deskripsi' => 'nullable|string',
             'foto' => 'nullable|image|max:2048'
@@ -35,7 +35,7 @@ class EkstrakurikulerController extends Controller
 
         Ekstrakurikuler::create([
             'nama_ekstrakurikuler' => $request->nama_ekstrakurikuler,
-            'pembimbing' => $request->pembimbing,
+            'pembina' => $request->pembina,
             'jadwal' => $request->jadwal,
             'deskripsi' => $request->deskripsi,
             'foto' => $path
@@ -56,7 +56,7 @@ class EkstrakurikulerController extends Controller
 
         $request->validate([
             'nama_ekstrakurikuler' => 'required|string|max:100',
-            'pembimbing' => 'required|string|max:100',
+            'pembina' => 'required|string|max:100',
             'jadwal' => 'required|string|max:100',
             'deskripsi' => 'nullable|string',
             'foto' => 'nullable|image|max:2048'
@@ -69,7 +69,7 @@ class EkstrakurikulerController extends Controller
 
         $ekstrakurikuler->update([
             'nama_ekstrakurikuler' => $request->nama_ekstrakurikuler,
-            'pembimbing' => $request->pembimbing,
+            'pembina' => $request->pembina,
             'jadwal' => $request->jadwal,
             'deskripsi' => $request->deskripsi,
             'foto' => $path

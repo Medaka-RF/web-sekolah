@@ -39,7 +39,7 @@
                         <td>{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</td>
                         <td>
                             @if ($item->gambar)
-                                <img src="{{ asset('storage/' . $item->gambar) }}" alt="Gambar" width="80" class="rounded">
+                                <img src="{{ asset('assets/image/' . $item->gambar) }}" alt="Gambar" width="80" class="rounded">
                             @else
                                 <span class="text-muted">Tidak ada</span>
                             @endif

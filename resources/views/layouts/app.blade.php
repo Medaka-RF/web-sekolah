@@ -11,8 +11,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#beranda">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" width="40" class="me-2">
-            {{ $profil->nama_sekolah ?? 'Profil Sekolah' }}
+            <img src="{{ asset('assets/image/logosmp.jpg') }}" alt="Logo" width="40" class="me-2">
+            {{ $profil->nama_sekolah ?? 'SMPN 1 SUKARATU' }}
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>

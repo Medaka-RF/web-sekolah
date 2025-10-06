@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\User;
+use Illuminate\Container\Attributes\Storage;
 
 class BeritaController extends Controller
 {

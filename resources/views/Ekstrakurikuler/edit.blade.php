@@ -5,7 +5,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="card">
-        <div class="card-header bg-warning text-white">
+        <div class="card-header bg-success text-white">
             <i class="fas fa-edit"></i> Edit Ekstrakurikuler
         </div>
         <div class="card-body">
@@ -31,11 +31,11 @@
                 <div class="mb-3">
                     <label class="form-label">Foto</label><br>
                     @if ($ekstrakurikuler->foto)
-                        <img src="{{ asset('storage/' . $ekstrakurikuler->foto) }}" width="100" class="rounded mb-2">
+                        <img src="{{ asset('assets/image' . $ekstrakurikuler->foto) }}" width="100" class="rounded mb-2">
                     @endif
                     <input type="file" name="foto" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-warning text-white">Update</button>
+                <button type="submit" class="btn btn-success text-white">Update</button>
                 <a href="{{ route('ekstrakurikuler.index') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
