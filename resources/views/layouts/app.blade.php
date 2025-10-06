@@ -30,7 +30,7 @@
     </div>
 </nav>
 
-<div style="margin-top: 80px;">
+<div>
     @yield('content')
 </div>
 

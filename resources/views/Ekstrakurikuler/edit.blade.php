@@ -17,26 +17,26 @@
                     <input type="text" name="nama_ekstrakurikuler" class="form-control" value="{{ $ekstrakurikuler->nama_ekstrakurikuler }}" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Pembimbing</label>
-                    <input type="text" name="pembimbing" class="form-control" value="{{ $ekstrakurikuler->pembimbing }}" required>
+                    <label class="form-label">Pembina</label>
+                    <input type="text" name="pembina" class="form-control" value="{{ $ekstrakurikuler->pembina }}" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Jadwal</label>
-                    <input type="text" name="jadwal" class="form-control" value="{{ $ekstrakurikuler->jadwal }}" required>
+                    <label class="form-label">Jadwal Latihan</label>
+                    <input type="text" name="jadwal_latihan" class="form-control" value="{{ $ekstrakurikuler->jadwal_latihan }}" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Deskripsi</label>
-                    <textarea name="deskripsi" class="form-control">{{ $ekstrakurikuler->deskripsi }}</textarea>
+                    <input type="deksripsi" class="form-control" value="{{ $ekstrakurikuler->deksripsi }}" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Foto</label><br>
-                    @if ($ekstrakurikuler->foto)
-                        <img src="{{ asset('assets/image' . $ekstrakurikuler->foto) }}" width="100" class="rounded mb-2">
+                    @if ($ekstrakurikuler->file)
+                        <img src="{{ asset('storage/' . $ekstrakurikuler->file) }}" width="100" class="rounded mb-2">
                     @endif
-                    <input type="file" name="foto" class="form-control">
+                    <input type="file" name="file" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-success text-white">Update</button>
-                <a href="{{ route('ekstrakurikuler.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('admin.ekstrakurikuler') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
     </div>

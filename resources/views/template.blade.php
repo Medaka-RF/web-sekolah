@@ -14,7 +14,7 @@
         {{-- Sidebar --}}
         <div class="col-md-2 bg-dark text-white min-vh-100">
             <div class="text-center py-4 border-bottom border-secondary">
-                <img src="{{ asset('images/admin.png') }}" alt="Admin" class="rounded-circle mb-2" width="60">
+                <img src="{{ asset('assets/image/afternoon.jpg') }}" alt="Admin" class="rounded-circle mb-2" width="60">
                 <div>Admin</div>
                 <small class="text-success">Online</small>
             </div>
@@ -60,20 +60,17 @@
             </div>
         </div>
 
-        {{-- Konten Utama --}}
         <div class="col-md-10 bg-light min-vh-100">
-            {{-- Navbar --}}
             <nav class="navbar navbar-light bg-white shadow-sm px-3 mb-4">
                 <span class="navbar-brand mb-0 h5">@yield('title')</span>
                 <div>
                     <span class="me-3"><i class="fas fa-user-circle"></i> Admin</span>
-                    <a href="#" class="btn btn-outline-danger btn-sm">
+                    <a href="{{ route('login') }}" class="btn btn-outline-danger btn-sm">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </div>
             </nav>
 
-            {{-- Halaman Konten --}}
             <div class="container-fluid">
                 @yield('content')
             </div>

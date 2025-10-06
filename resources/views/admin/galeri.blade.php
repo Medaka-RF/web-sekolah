@@ -15,8 +15,8 @@
             @foreach ($galeri as $item)
             <div class="col-md-3 mb-4">
                 <div class="card h-100 shadow-sm">
-                    @if ($item->foto)
-                        <img src="{{ asset('assets/image/' . $item->foto) }}" class="card-img-top" height="180" style="object-fit: cover;">
+                    @if ($item->file)
+                        <img src="{{ asset('storage/' . $item->file) }}" class="card-img-top" height="180" style="object-fit: cover;">
                     @else
                         <div class="p-5 text-center text-muted">No Image</div>
                     @endif

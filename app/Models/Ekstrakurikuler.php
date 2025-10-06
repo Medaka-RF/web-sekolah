@@ -15,8 +15,8 @@ class Ekstrakurikuler extends Model
     protected $fillable = [
         'nama_ekstrakurikuler',
         'pembina',
-        'jadwal',
-        'deskripsi',
+        'jadwal_latihan',
+        'deksripsi',
         'foto'
     ];
     public $timestamps = false;

@@ -4,27 +4,35 @@
 
 @section('content')
 <style>
-    html {
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
         scroll-behavior: smooth;
     }
+
     .hero {
         position: relative;
         text-align: center;
         color: white;
         background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-                    url('{{ asset('images/sekolah.jpg') }}') center/cover no-repeat;
-        height: 80vh;
+        url('{{ asset('assets/image/halaman.jpg') }}') center/cover no-repeat;
+        height: 100vh; 
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-top: 80px; 
     }
+
     .hero h1 {
         font-size: 3rem;
         font-weight: bold;
     }
+
     section {
         padding: 80px 0;
     }
+
     .section-title {
         text-align: center;
         margin-bottom: 50px;
@@ -35,7 +43,6 @@
 
 <section id="beranda" class="hero">
     <div>
-        <img src="{{ asset('assets/image/') }}" width="100" class="mb-3" alt="Logo Sekolah">
         <h1>{{ $profil->nama_sekolah ?? 'SMPN 1 Sukaratu' }}</h1>
         <p>{{ $profil->alamat ?? 'Kp.Sindanggalih, Kec.Sukaratu, Kab.Tasikmalaya' }}</p>
         <a href="#profil" class="btn btn-light mt-3">Lihat Selengkapnya</a>
@@ -47,7 +54,7 @@
         <h2 class="section-title">Profil Sekolah</h2>
         <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="{{ asset('assets/image/') }}" alt="Tentang Sekolah" class="img-fluid rounded shadow">
+                <img src="{{ asset('assets/image/upacara.jpeg') }}" alt="Tentang Sekolah" class="img-fluid rounded shadow">
             </div>
             <div class="col-md-6">
                 <h4>{{ $profil->nama_sekolah ?? 'SMPN 1 Sukaratu' }}</h4>

@@ -18,7 +18,7 @@
                     <th>No</th>
                     <th>Nama Ekstrakurikuler</th>
                     <th>Pembina</th>
-                    <th>Jadwal</th>
+                    <th>Jadwal Latihan</th>
                     <th>Deskripsi</th>
                     <th>Foto</th>
                     <th>Aksi</th>
@@ -30,8 +30,8 @@
                     <td>{{ $index + 1 }}</td>
                     <td>{{ $item->nama_ekstrakurikuler }}</td>
                     <td>{{ $item->pembina }}</td>
-                    <td>{{ $item->jadwal }}</td>
-                    <td>{{ $item->deskripsi }}</td>
+                    <td>{{ $item->jadwal_latihan }}</td>
+                    <td>{{ $item->deksripsi }}</td>
                     <td>
                         @if ($item->foto)
                             <img src="{{ asset('assets/image' . $item->foto) }}" width="60" height="60" class="rounded">

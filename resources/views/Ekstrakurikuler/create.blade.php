@@ -16,16 +16,16 @@
                     <input type="text" name="nama_ekstrakurikuler" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Pembimbing</label>
-                    <input type="text" name="pembimbing" class="form-control" required>
+                    <label class="form-label">Pembina</label>
+                    <input type="text" name="pembina" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Jadwal</label>
-                    <input type="text" name="jadwal" class="form-control" required>
+                    <label class="form-label">Jadwal Latihan</label>
+                    <input type="text" name="jadwal_latihan" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Deskripsi</label>
-                    <textarea name="deskripsi" class="form-control"></textarea>
+                    <textarea name="deksripsi" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Foto</label>
