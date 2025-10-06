@@ -24,7 +24,7 @@ class GaleriController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'keterangan' => 'required|string',
-            'file' => 'required|file|mimes:jpg,jpeg,png,mp4,mov,avi|max:20480', 
+            'file' => 'required|file|mimes:jpg,jpeg,png,mp4,mov,avi|max:20480',
             'jenis' => 'required|in:foto,video',
             'tanggal' => 'required|date',
         ]);
@@ -55,7 +55,7 @@ class GaleriController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'keterangan' => 'required|string',
-            'file' => 'required|file|mimes:jpg,jpeg,png,mp4,mov,avi|max:20480', 
+            'file' => 'required|file|mimes:jpg,jpeg,png,mp4,mov,avi|max:20480',
             'jenis' => 'required|in:foto,video',
             'tanggal' => 'required|date',
         ]);
@@ -82,5 +82,11 @@ class GaleriController extends Controller
         $galeri->delete();
 
         return redirect()->route('admin.galeri')->with('success', 'Data galeri berhasil dihapus!');
+    }
+
+    public function publicIndex()
+    {
+        $galeri = Galeri::all();
+        return view('galeri', compact('galeri'));
     }
 }

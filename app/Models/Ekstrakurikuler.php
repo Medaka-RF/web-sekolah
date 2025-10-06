@@ -11,7 +11,7 @@ class Ekstrakurikuler extends Model
     use HasFactory;
 
     protected $table = 'ekstrakurikuler';
-    protected $primaryKey = 'id_ekstrakurikuler';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'nama_ekstrakurikuler',
         'pembina',

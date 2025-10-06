@@ -2,19 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Siswa;
+use App\Models\Guru;
+use App\Models\Berita;
+use App\Models\Galeri;
+use App\Models\Ekstrakurikuler;
 use Illuminate\Http\Request;
+
+
 
 class DashboardController extends Controller
 {
     //
     public function index()
     {
-        return view('admin.dashboard', [
-            'title' => 'Dashboard',
-            'active' => 'dashboard'
-        ]);
+        $totalSiswa = Siswa::count();
+        $totalGuru = Guru::count();
+        $totalBerita = Berita::count();
+        $totalGaleri = Galeri::count();
+        $totalEkstrakurikuler = Ekstrakurikuler::count();
+
+        return view('admin.dashboard', compact(
+            'totalSiswa',
+            'totalGuru',
+            'totalBerita',
+            'totalGaleri',
+            'totalEkstrakurikuler'
+        ));
+
     }
-    
+
+    public function admin()
+    {
+        return view('admin.dashboard');
+    }
+
+    public function operator()
+    {
+        return view('operator.dashboard');
+    }
+
     public function show()
     {
 
@@ -43,12 +70,12 @@ class DashboardController extends Controller
             'active' => 'berita'
         ]);
     }
-    
+
     public function galeri()
     {
         return view('admin.galeri',[
         'title' => 'Data Galeri',
-        'active' => 'galeri' 
+        'active' => 'galeri'
         ]);
     }
 

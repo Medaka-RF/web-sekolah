@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a href="#beranda" class="nav-link">Beranda</a></li>
-                <li class="nav-item"><a href="#profil" class="nav-link">Profil Sekolah</a></li>
+                <li class="nav-item"><a href="{{ route('profil.detail') }}" class="nav-link">Profil Sekolah</a></li>
                 <li class="nav-item"><a href="#galeri" class="nav-link">Galeri</a></li>
                 <li class="nav-item">
                     <a href="{{ route('login') }}" class="btn btn-success ms-2">Login</a>

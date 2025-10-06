@@ -7,7 +7,7 @@ use App\Models\ProfilSekolah;
 use App\Models\Guru;
 use App\Models\Siswa;
 use App\Models\Ekstrakurikuler;
-use App\Models\Galeri; 
+use App\Models\Galeri;
 
 class HomeController extends Controller
 {
@@ -20,4 +20,9 @@ class HomeController extends Controller
     $galeri = Galeri::all();
     return view('home', compact('profil','guru','siswa','ekskul','galeri'));
 }
+    public function profilSekolah()
+    {
+        $profil = ProfilSekolah::first();
+        return view('profilsekolah', compact('profil'));
+    }
 }

@@ -34,14 +34,14 @@
                     <td>{{ $item->deksripsi }}</td>
                     <td>
                         @if ($item->foto)
-                            <img src="{{ asset('assets/image' . $item->foto) }}" width="60" height="60" class="rounded">
+                            <img src="{{ asset('storage/' . $item->foto) }}" width="60" height="60" class="rounded">
                         @else
                             <span class="text-muted">Tidak ada</span>
                         @endif
                     </td>
                     <td>
-                        <a href="{{ route('ekstrakurikuler.edit', $item->id_ekstrakurikuler) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                        <form action="{{ route('ekstrakurikuler.destroy', $item->id_ekstrakurikuler) }}" method="POST" class="d-inline">
+                        <a href="{{ route('ekstrakurikuler.edit', $item->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                        <form action="{{ route('ekstrakurikuler.destroy', $item->id) }}" method="POST" class="d-inline">
                             @csrf @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')"><i class="fas fa-trash"></i></button>
                         </form>

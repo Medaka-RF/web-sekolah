@@ -38,17 +38,17 @@
                         <td>{{ $item->user->username ?? '-' }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</td>
                         <td>
-                            @if ($item->gambar)
-                                <img src="{{ asset('assets/image/' . $item->gambar) }}" alt="Gambar" width="80" class="rounded">
+                            @if ($item->foto)
+                                <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="80" class="rounded">
                             @else
                                 <span class="text-muted">Tidak ada</span>
                             @endif
                         </td>
                         <td>
-                            <a href="{{ route('berita.edit', $item->id_berita) }}" class="btn btn-warning btn-sm">
+                            <a href="{{ route('berita.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <form action="{{ route('berita.destroy', $item->id_berita) }}" method="POST" class="d-inline">
+                            <form action="{{ route('berita.destroy', $item->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus berita ini?')">

@@ -2,24 +2,25 @@
 
 @section('content')
 <div class="container py-5">
-    <h2 class="text-center mb-5 text-primary">Galeri Sekolah</h2>
+    <h2 class="text-center mb-5 text-primary">Daftar Guru SMP Negeri 1 Sukaratu</h2>
 
     <div class="row">
-        @forelse($galeri as $item)
+        @forelse($guru as $item)
             <div class="col-md-3 mb-4">
-                <div class="card shadow-sm h-100">
+                <div class="card text-center shadow-sm h-100">
                     <img src="{{ asset('storage/' . $item->foto) }}"
                          class="card-img-top"
-                         alt="{{ $item->judul }}"
+                         alt="{{ $item->nama_guru }}"
                          style="height: 200px; object-fit: cover;">
-                    <div class="card-body text-center">
-                        <h6 class="fw-bold">{{ $item->judul }}</h6>
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-1">{{ $item->nama_guru }}</h5>
+                        <p class="text-muted mb-0">{{ $item->mapel }}</p>
                     </div>
                 </div>
             </div>
         @empty
             <div class="col-12 text-center">
-                <p class="text-muted">Belum ada foto galeri yang tersedia.</p>
+                <p class="text-muted">Belum ada data guru yang tersedia.</p>
             </div>
         @endforelse
     </div>

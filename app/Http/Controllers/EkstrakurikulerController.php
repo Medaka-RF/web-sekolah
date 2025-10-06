@@ -29,8 +29,8 @@ class EkstrakurikulerController extends Controller
             'foto' => 'nullable|image|max:2048'
         ]);
 
-        $path = $request->hasFile('foto') 
-            ? $request->file('foto')->store('ekstrakurikuler', 'public') 
+        $path = $request->hasFile('foto')
+            ? $request->file('foto')->store('ekstrakurikuler', 'public')
             : null;
 
         Ekstrakurikuler::create([
@@ -44,15 +44,15 @@ class EkstrakurikulerController extends Controller
         return redirect()->route('admin.ekstrakurikuler')->with('success', 'Ekstrakurikuler berhasil ditambahkan!');
     }
 
-    public function edit($id_ekstrakurikuler)
+    public function edit($id)
     {
-        $ekstrakurikuler = Ekstrakurikuler::findOrFail($id_ekstrakurikuler);
+        $ekstrakurikuler = Ekstrakurikuler::findOrFail($id);
         return view('ekstrakurikuler.edit', compact('ekstrakurikuler'));
     }
 
-    public function update(Request $request, $id_ekstrakurikuler)
+    public function update(Request $request, $id)
     {
-        $ekstrakurikuler = Ekstrakurikuler::findOrFail($id_ekstrakurikuler);
+        $ekstrakurikuler = Ekstrakurikuler::findOrFail($id);
 
         $request->validate([
             'nama_ekstrakurikuler' => 'required|string|max:100',
@@ -78,9 +78,9 @@ class EkstrakurikulerController extends Controller
         return redirect()->route('admin.ekstrakurikuler')->with('success', 'Data berhasil diperbarui!');
     }
 
-     public function destroy($id_ekstrakurikuler)
+     public function destroy($id)
     {
-        $ekstrakurikuler = Ekstrakurikuler::findOrFail($id_ekstrakurikuler);
+        $ekstrakurikuler = Ekstrakurikuler::findOrFail($id);
         $ekstrakurikuler->delete();
         return redirect()->route('admin.ekstrakurikuler')->with('success', 'Data berhasil dihapus!');
     }

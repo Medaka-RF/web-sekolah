@@ -12,7 +12,7 @@
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="card shadow-lg" style="border-radius: 20px; width: 800px;">
             <div class="row g-0">
-                
+
                 <div class="col-md-6 d-flex flex-column justify-content-center align-items-center p-4">
                     <img src="{{ asset('assets/image/logosmp.jpg') }}" alt="Logo Sekolah" style="width: 100px; height: auto;">
                     <h3 class="mt-3 mb-2 text-center">SMP 1 Sukaratu</h3>

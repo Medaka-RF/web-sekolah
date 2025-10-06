@@ -9,7 +9,7 @@
             <i class="fas fa-edit"></i> Edit Ekstrakurikuler
         </div>
         <div class="card-body">
-            <form action="{{ route('ekstrakurikuler.update', $ekstrakurikuler->id_ekstrakurikuler) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('ekstrakurikuler.update', $ekstrakurikuler->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf @method('PUT')
 
                 <div class="mb-3">

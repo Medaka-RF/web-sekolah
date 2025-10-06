@@ -20,7 +20,7 @@
             </div>
         @endif
 
-        <form action="{{ route('berita.update', $berita->id_berita) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('berita.update', $berita->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -42,7 +42,7 @@
             <div class="mb-3">
                 <label class="form-label">Gambar Saat Ini</label><br>
                 @if ($berita->gambar)
-                    <img src="{{ asset('storage/' . $berita->gambar) }}" alt="Gambar Berita" width="120" class="rounded mb-2">
+                    <img src="{{ asset('storage/berita/' . $berita->gambar) }}" alt="Gambar Berita" width="120" class="rounded mb-2">
                 @else
                     <p class="text-muted">Tidak ada gambar</p>
                 @endif

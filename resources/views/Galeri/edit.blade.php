@@ -39,7 +39,7 @@
                 <div class="mb-3">
                     <label class="form-label">File Saat Ini</label><br>
                     @if ($galeri->jenis === 'foto')
-                        <img src="{{ asset('assets/image/' . $galeri->file) }}" width="150" class="rounded mb-2">
+                        <img src="{{ asset('storage/' . $galeri->file) }}" width="150" class="rounded mb-2">
                     @elseif ($galeri->jenis === 'video')
                         <video width="320" height="240" controls class="mb-2">
                             <source src="{{ asset('assets/image/' . $galeri->file) }}" type="video/mp4">

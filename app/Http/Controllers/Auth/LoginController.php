@@ -4,17 +4,15 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
-
+    use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    //
     public function showLoginForm()
     {
         return view('auth.login');
     }
+
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
@@ -24,32 +22,16 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+
+            if (Auth::user()->role === 'admin') {
+                return redirect('/admin/dashboard');
+            } else {
+                return redirect('/operator/dashboard');
+            }
         }
 
-        return back()->with('loginError', 'Login Gagal');
+        return back()->with('loginError', 'Username atau password salah!');
     }
-
-
-public function store(Request $request)
-{
-    $request->validate([
-        'judul' => 'required',
-        'isi' => 'required',
-        'tanggal' => 'required|date',
-    ]);
-
-    Berita::create([
-        'judul' => $request->judul,
-        'isi' => $request->isi,
-        'tanggal' => $request->tanggal,
-        'id_user' => Auth::id(), // otomatis ambil dari user login
-    ]);
-
-    return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan!');
-}
-
-
     public function logout(Request $request)
     {
         Auth::logout();
@@ -58,4 +40,3 @@ public function store(Request $request)
         return redirect('/login');
     }
 }
-

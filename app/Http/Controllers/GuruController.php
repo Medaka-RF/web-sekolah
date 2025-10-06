@@ -13,6 +13,7 @@ class GuruController extends Controller
     {
         $guru = Guru::all();
         return view('admin.guru', compact('guru'));
+
     }
 
     public function create()
@@ -78,5 +79,11 @@ class GuruController extends Controller
         $guru = Guru::findOrFail($id);
         $guru->delete();
         return redirect()->route('admin.guru')->with('success', 'Guru berhasil dihapus!');
+    }
+
+    public function publicIndex()
+    {
+        $guru = Guru::all();
+        return view('guru', compact('guru'));
     }
 }

@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\User;
-use Illuminate\Container\Attributes\Storage;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
-    //
     public function index()
     {
         $berita = Berita::with('user')->orderBy('tanggal', 'desc')->get();
@@ -31,10 +31,10 @@ class BeritaController extends Controller
             'isi' => 'required|string',
             'tanggal' => 'required|date',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'id_user' => 'required|exists:user,id_user'
         ]);
 
         $data = $request->all();
+        $data['id_user'] = Auth::id();
 
         if ($request->hasFile('gambar')) {
             $data['gambar'] = $request->file('gambar')->store('berita', 'public');
@@ -42,7 +42,7 @@ class BeritaController extends Controller
 
         Berita::create($data);
 
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan.');
+        return redirect()->route('admin.berita')->with('success', 'Berita berhasil ditambahkan.');
     }
 
     public function edit($id)
@@ -61,10 +61,10 @@ class BeritaController extends Controller
             'isi' => 'required|string',
             'tanggal' => 'required|date',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'id_user' => 'required|exists:user,id_user'
         ]);
 
         $data = $request->all();
+        $data['id_user'] = Auth::id();
 
         if ($request->hasFile('gambar')) {
             if ($berita->gambar && Storage::exists('public/' . $berita->gambar)) {
@@ -75,7 +75,7 @@ class BeritaController extends Controller
 
         $berita->update($data);
 
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui.');
+        return redirect()->route('admin.berita')->with('success', 'Berita berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -88,7 +88,6 @@ class BeritaController extends Controller
 
         $berita->delete();
 
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus.');
+        return redirect()->route('admin.berita')->with('success', 'Berita berhasil dihapus.');
     }
 }
-
