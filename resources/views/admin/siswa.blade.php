@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bg-success text-white">
             <i class="fas fa-users"></i> Daftar Siswa (Total: {{ count($siswa) }})
         </div>
         <div class="card-body">

@@ -4,12 +4,12 @@
 
 @section('content')
 <div class="card mt-4">
-    <div class="card-header bg-primary text-white">
+    <div class="card-header bg-success text-white">
         <i class="fas fa-newspaper"></i> Daftar Berita (Total: {{ $totalBerita }})
     </div>
 
     <div class="card-body">
-        <a href="{{ route('berita.create') }}" class="btn btn-success mb-3">
+        <a href="{{ route('berita.create') }}" class="btn btn-primary mb-3">
             <i class="fas fa-plus"></i> Tambah Berita
         </a>
 

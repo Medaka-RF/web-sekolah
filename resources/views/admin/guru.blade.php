@@ -9,7 +9,7 @@
     </div>
 
     <div class="card-body">
-        <a href="{{ route('guru.create') }}" class="btn btn-success mb-3">+ Tambah Guru</a>
+        <a href="{{ route('guru.create') }}" class="btn btn-primary mb-3">+ Tambah Guru</a>
 
         <table class="table table-bordered align-middle">
             <thead class="table-dark">

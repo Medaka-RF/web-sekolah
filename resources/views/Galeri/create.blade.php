@@ -5,7 +5,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="card">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bg-success text-white">
             <i class="fas fa-plus"></i> Tambah Foto Galeri
         </div>
         <div class="card-body">
@@ -24,7 +24,7 @@
                     <input type="file" name="foto" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary text-white">Simpan</button>
-                <a href="{{ route('galeri.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('admin.galeri') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
     </div>

@@ -4,12 +4,12 @@
 
 @section('content')
 <div class="card mt-4">
-    <div class="card-header bg-info text-white">
+    <div class="card-header bg-success text-white">
         <i class="fas fa-futbol"></i> Daftar Ekstrakurikuler (Total: {{ count($ekstrakurikuler ?? []) }})
     </div>
 
     <div class="card-body">
-        <a href="{{ route('ekstrakurikuler.create') }}" class="btn btn-info mb-3">+ Tambah Ekstrakurikuler</a>
+        <a href="{{ route('ekstrakurikuler.create') }}" class="btn btn-primary mb-3">+ Tambah Ekstrakurikuler</a>
 
         <table class="table table-bordered align-middle">
             <thead class="table-dark text-center">

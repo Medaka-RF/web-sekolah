@@ -37,7 +37,7 @@
     <div>
         <img src="{{ asset('images/logo.png') }}" width="100" class="mb-3" alt="Logo Sekolah">
         <h1>{{ $profil->nama_sekolah ?? 'SMPN 1 Sukaratu' }}</h1>
-        <p>{{ $profil->alamat ?? 'Alamat Sekolah' }}</p>
+        <p>{{ $profil->alamat ?? 'Kp.Sindanggalih, Kec.Sukaratu, Kab.Tasikmalaya' }}</p>
         <a href="#profil" class="btn btn-light mt-3">Lihat Selengkapnya</a>
     </div>
 </section>
@@ -54,7 +54,7 @@
                 <p><strong>Kepala Sekolah:</strong> {{ $profil->kepala_sekolah ?? 'Nama Kepala Sekolah' }}</p>
                 <p><strong>NPSN:</strong> {{ $profil->npsn ?? '-' }}</p>
                 <p><strong>Kontak:</strong> {{ $profil->kontak ?? '-' }}</p>
-                <p>{{ $profil->deskripsi ?? 'Ini deskripsi' }}</p>
+                <p>{{ $profil->deskripsi ?? 'Sekolah' }}</p>
             </div>
         </div>
     </div>
@@ -129,7 +129,7 @@
                         <img src="{{ asset('storage/'.$item->file) }}" class="card-img-top" alt="foto">
                     @else
                         <video class="w-100" controls>
-                            <source src="{{ asset('storage/'.$item->file) }}" type="video/mp4">
+                            <source src="{{ assets('storage/'.$item->file) }}" type="video/mp4">
                         </video>
                     @endif
                     <div class="card-body">
